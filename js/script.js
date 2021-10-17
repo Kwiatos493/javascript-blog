@@ -149,7 +149,7 @@ function generateAuthors() {
   }
 }
 
-function addClickListenersToAuthors() {
+function authorClickHandler(event) {
 
 		event.preventDefault();
 	  
@@ -172,6 +172,15 @@ function addClickListenersToAuthors() {
 		}
 	  
 		generateAuthors('[data-author~="' + author + '"]');;
+	  }
+
+function addClickListenersToAuthors() {
+
+		const authorsLink = document.querySelectorAll('a.active[href^="#tag-"]');
+	  
+		for (let authorlink of authorsLink) {
+		  link.addEventListener("click", authorClickHandler);
+		}
 	  }
   
 
